@@ -195,8 +195,11 @@ st.caption("Evolves 80-bit individuals; peak fitness 80 when exactly 50 ones are
 
 with st.sidebar:
     st.header("Problem")
-    problem_type = st.selectbox
-    ("Type", ["Custom 80-bit (peak 50)", "OneMax (bits)"], index==0)
+    
+    problem_type = st.selectbox(
+        "Type", 
+        ["Custom 80-bit (peak 50)", "OneMax (bits)"], index=0)
+
 
     if problem_type == "OneMax (bits)":
         dim = st.number_input("Chromosome length (bits)", min_value=8, max_value=4096, value=64, step=8)
@@ -267,4 +270,3 @@ with right:
 if "_final_pop" not in st.session_state:
     st.session_state["_final_pop"] = None
     st.session_state["_final_fit"] = None
-
