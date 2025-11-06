@@ -189,16 +189,14 @@ def run_ga(
 
 
 # -------------------- Streamlit UI --------------------
-st.set_page_config(page_title="Genetic Algorithm - Custom 80-bit", page_icon="🧬", layout="wide")
+st.set_page_config(page_title="Genetic Algorithm - Custom 80-bit", page_icon="🦖", layout="wide")
 st.title("Genetic Algorithm (GA) — Custom 80-bit target")
 st.caption("Evolves 80-bit individuals; peak fitness 80 when exactly 50 ones are present.")
 
 with st.sidebar:
     st.header("Problem")
-    problem_type = st.selectbox(
-        "Type",
-        ["Custom 80-bit (peak 50)", "OneMax (bits)"]
-    )
+    problem_type = st.selectbox
+    ("Type", ["Custom 80-bit (peak 50)", "OneMax (bits)"], index=0)
 
     if problem_type == "OneMax (bits)":
         dim = st.number_input("Chromosome length (bits)", min_value=8, max_value=4096, value=64, step=8)
